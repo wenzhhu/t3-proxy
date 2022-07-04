@@ -1,0 +1,41 @@
+{
+  "name": "t3-proxy",
+  "version": "1.0.0",
+  "description": "Http proxy for easy traffic monitor, request/response manipulation",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags",
+    "build": "tsc",
+    "test": "jest --config jestconfig.json",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wenzhhu/t3-proxy.git"
+  },
+  "keywords": [],
+  "author": "Wenzhong Hu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wenzhhu/t3-proxy/issues"
+  },
+  "homepage": "https://github.com/wenzhhu/t3-proxy#readme",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.5",
+    "ts-jest": "^27.1.2",
+    "tslint": "^6.1.3",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "hoxy": "^3.3.1",
+    "loglevel": "^1.8.0"
+  }
+}
